@@ -6,7 +6,7 @@ export function KeyFigures({ figures, t }: { figures: KeyFigure[]; t: Dictionary
     <section
       id="cifras"
       aria-labelledby="cifras-titulo"
-      className="bg-grain bg-navy py-20 text-white sm:py-24"
+      className="bg-grain bg-navy py-20 text-white sm:py-24 dark:border-y dark:border-gold/20"
     >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div data-reveal className="mb-12">

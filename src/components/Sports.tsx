@@ -6,7 +6,7 @@ export function Sports({ data, t }: { data: SportsData; t: Dictionary }) {
     <section
       id="karate"
       aria-labelledby="karate-titulo"
-      className="bg-grain relative overflow-hidden bg-navy py-20 text-white sm:py-28"
+      className="bg-grain relative overflow-hidden bg-navy py-20 text-white sm:py-28 dark:border-b dark:border-gold/20"
     >
       {/* Cinta negra decorativa con franjas doradas (4.º Dan). */}
       <div aria-hidden className="absolute inset-x-0 top-0 h-3 bg-black">

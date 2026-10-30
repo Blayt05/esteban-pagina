@@ -75,7 +75,7 @@ export function Hero({ profile, t }: { profile: Profile; t: Dictionary }) {
               <div
                 role="img"
                 aria-label={t.hero.photoAlt}
-                className="bg-grain relative flex h-full w-full items-center justify-center rounded-[2rem] bg-navy shadow-xl"
+                className="bg-grain relative flex h-full w-full items-center justify-center rounded-[2rem] bg-navy shadow-xl dark:ring-1 dark:ring-gold/25"
               >
                 <span className="font-serif text-8xl font-medium text-gold/90">
                   {initials(profile.name)}

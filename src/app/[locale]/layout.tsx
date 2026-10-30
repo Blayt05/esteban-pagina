@@ -71,9 +71,6 @@ export const viewport: Viewport = {
   ],
 };
 
-// Se ejecuta antes del primer pintado: aplica el tema guardado y marca que hay JS (animaciones).
-const themeScript = `(function(){try{var d=document.documentElement;d.classList.add('js');var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){d.classList.add('dark')}}catch(e){}})();`;
-
 export default async function LocaleLayout({ children, params }: LayoutProps<"/[locale]">) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
@@ -86,9 +83,6 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
       className={`${fraunces.variable} ${inter.variable} antialiased`}
       suppressHydrationWarning
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
       <body className="min-h-screen bg-bg text-ink">
         <a
           href="#contenido"

@@ -3,14 +3,27 @@
 import { useEffect } from "react";
 
 // Añade .is-visible a los elementos [data-reveal] cuando entran en pantalla.
-// Con prefers-reduced-motion, el CSS los muestra sin animación.
+// Lo que ya está visible se marca antes de activar .reveal en <html>, en el mismo frame,
+// para que no parpadee. Con prefers-reduced-motion, el CSS lo muestra todo sin animación.
 export function RevealObserver() {
   useEffect(() => {
-    const elements = document.querySelectorAll<HTMLElement>("[data-reveal]");
-    if (!("IntersectionObserver" in window)) {
-      elements.forEach((el) => el.classList.add("is-visible"));
-      return;
-    }
+    const root = document.documentElement;
+    const elements = [...document.querySelectorAll<HTMLElement>("[data-reveal]")];
+    if (!("IntersectionObserver" in window)) return;
+
+    const inView = (el: HTMLElement) => {
+      const r = el.getBoundingClientRect();
+      return r.top < window.innerHeight && r.bottom > 0;
+    };
+    const pending = elements.filter((el) => {
+      if (inView(el)) {
+        el.classList.add("is-visible");
+        return false;
+      }
+      return true;
+    });
+    root.classList.add("reveal");
+
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -22,8 +35,11 @@ export function RevealObserver() {
       },
       { rootMargin: "0px 0px -8% 0px", threshold: 0.08 },
     );
-    elements.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+    pending.forEach((el) => observer.observe(el));
+    return () => {
+      observer.disconnect();
+      root.classList.remove("reveal");
+    };
   }, []);
 
   return null;

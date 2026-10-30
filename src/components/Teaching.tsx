@@ -8,7 +8,7 @@ export function Teaching({ data, t }: { data: CvContent["teaching"]; t: Dictiona
       <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr]">
         <figure
           data-reveal
-          className="bg-grain self-start rounded-2xl bg-navy p-8 text-white shadow-lg"
+          className="bg-grain self-start rounded-2xl bg-navy p-8 text-white shadow-lg dark:ring-1 dark:ring-gold/25"
         >
           <span aria-hidden className="font-serif text-6xl leading-none text-gold">“</span>
           <blockquote className="font-serif text-xl leading-relaxed">{data.highlight}</blockquote>
