@@ -4,6 +4,7 @@ import type { Dictionary } from "@/i18n/dictionaries";
 import { initials } from "@/lib/utils";
 import { GlobeIcon } from "./Icons";
 import { MobileMenu } from "./MobileMenu";
+import { ScrollProgress } from "./ScrollProgress";
 import { allNav, primaryNav } from "./nav";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -16,7 +17,7 @@ export function Header({ locale, t, name }: { locale: Locale; t: Dictionary; nam
         <a href="#inicio" className="group flex items-center gap-3">
           <span
             aria-hidden
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-navy font-serif text-sm font-semibold tracking-wide text-gold ring-1 ring-gold/40 dark:bg-surface"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-soft font-serif text-sm font-semibold tracking-wide text-accent ring-1 ring-gold/50 dark:bg-surface dark:text-gold"
           >
             {initials(name)}
           </span>
@@ -29,7 +30,7 @@ export function Header({ locale, t, name }: { locale: Locale; t: Dictionary; nam
               <li key={id}>
                 <a
                   href={`#${id}`}
-                  className="rounded-full px-3 py-2 text-sm text-muted transition-colors hover:bg-surface-2 hover:text-ink"
+                  className="nav-link relative rounded-full px-3 py-2 text-sm text-muted transition-colors hover:text-ink"
                 >
                   {t.sections[id]}
                 </a>
@@ -58,6 +59,7 @@ export function Header({ locale, t, name }: { locale: Locale; t: Dictionary; nam
           />
         </div>
       </div>
+      <ScrollProgress />
     </header>
   );
 }

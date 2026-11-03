@@ -23,6 +23,8 @@ export type SectionId =
   | "ponencias"
   | "membresias"
   | "karate"
+  | "galeria"
+  | "perfil"
   | "contacto";
 
 const es = {
@@ -57,6 +59,8 @@ const es = {
     ponencias: "Ponencias",
     membresias: "Membresías",
     karate: "Karate",
+    galeria: "Galería",
+    perfil: "Perfil",
     contacto: "Contacto",
   } satisfies Record<SectionId, string>,
   hero: {
@@ -80,6 +84,27 @@ const es = {
     present: "Actualidad",
     details: "Ver responsabilidades",
     shortConsultancy: "Consultoría internacional corta",
+    showAll: "Ver trayectoria completa",
+    showLess: "Ver menos",
+  },
+  gallery: {
+    eyebrow: "Galería",
+    title: "En acción",
+    intro: "Conferencias, foros, docencia y proyectos de CAIINNO.",
+  },
+  credentials: {
+    eyebrow: "Perfil",
+    title: "Formación, publicaciones y reconocimientos",
+    tabsLabel: "Secciones del perfil",
+  },
+  media: {
+    photoPending: "Foto pendiente",
+    videoPending: "Video pendiente",
+    open: "Ampliar",
+    play: "Reproducir video",
+    close: "Cerrar",
+    previous: "Anterior",
+    next: "Siguiente",
   },
   education: {
     eyebrow: "Formación",
@@ -160,6 +185,8 @@ const en: Dictionary = {
     ponencias: "Presentations",
     membresias: "Memberships",
     karate: "Karate",
+    galeria: "Gallery",
+    perfil: "Credentials",
     contacto: "Contact",
   },
   hero: {
@@ -183,6 +210,27 @@ const en: Dictionary = {
     present: "Present",
     details: "View responsibilities",
     shortConsultancy: "Short International Consultancy",
+    showAll: "View full career",
+    showLess: "Show less",
+  },
+  gallery: {
+    eyebrow: "Gallery",
+    title: "In action",
+    intro: "Conferences, forums, teaching and CAIINNO projects.",
+  },
+  credentials: {
+    eyebrow: "Credentials",
+    title: "Education, publications and honors",
+    tabsLabel: "Profile sections",
+  },
+  media: {
+    photoPending: "Photo coming soon",
+    videoPending: "Video coming soon",
+    open: "Enlarge",
+    play: "Play video",
+    close: "Close",
+    previous: "Previous",
+    next: "Next",
   },
   education: {
     eyebrow: "Academic history",

@@ -75,7 +75,7 @@ export function Contact({ locale, t }: { locale: Locale; t: Dictionary }) {
           <a
             href={asset(siteConfig.cvPdf[locale])}
             download
-            className="inline-flex items-center justify-center gap-2 self-start rounded-full bg-navy px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition hover:bg-navy-2 dark:bg-gold dark:text-navy"
+            className="inline-flex items-center justify-center gap-2 self-start rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-navy shadow-sm transition hover:bg-gold/90"
           >
             <DownloadIcon />
             {t.contact.downloadCv}

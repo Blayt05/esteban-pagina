@@ -1,9 +1,17 @@
 import type { Dictionary } from "@/i18n/dictionaries";
 import { Section } from "./Section";
 
-export function Memberships({ items, t }: { items: string[]; t: Dictionary }) {
+export function Memberships({
+  items,
+  t,
+  embedded,
+}: {
+  items: string[];
+  t: Dictionary;
+  embedded?: boolean;
+}) {
   return (
-    <Section id="membresias" eyebrow={t.memberships.eyebrow} title={t.memberships.title} tone="muted">
+    <Section embedded={embedded} id="membresias" eyebrow={t.memberships.eyebrow} title={t.memberships.title} tone="muted">
       <ul className="max-w-4xl divide-y divide-line border-y border-line">
         {items.map((item) => (
           <li key={item} data-reveal className="flex gap-4 py-4 leading-relaxed text-ink/85">

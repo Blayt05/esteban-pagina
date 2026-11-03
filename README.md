@@ -41,6 +41,7 @@ edita los archivos de datos de cada idioma (`src/data/es/` y `src/data/en/`, mis
 | Asesoría legislativa, reconocimientos, ponencias, membresías y organizaciones | `src/data/{es,en}/achievements.ts` |
 | Textos de interfaz (menú, títulos de sección, botones, meta descripción) | `src/i18n/dictionaries.ts` |
 | Contacto, foto, URL del sitio, PDFs | `src/config/site.ts` |
+| **Fotos y videos** (galería, karate y video del inicio) | `src/data/media.ts` (archivos en `public/media/`) |
 
 Los tipos de todos los datos están en `src/data/types.ts`; TypeScript avisa si falta algún campo.
 
@@ -50,6 +51,13 @@ Notas:
   más reciente a lo más antiguo. El campo `period` es el texto que se muestra.
 - **Publicaciones**: `category` decide el filtro (`idb`, `academic`, `caiinno`, `unctad`, `articles`) y
   `year` el orden. `source` es el texto de publicación que se muestra.
+- **Fotos y videos**: en `src/data/media.ts` cada elemento tiene `type` (`image`, `video` o `youtube`),
+  `src` y un pie de foto en ES/EN. Mientras `src` sea `null` se ve un marcador "Foto/Video pendiente".
+  Copia los archivos a `public/media/` (p. ej. `"/media/foro.jpg"`); para YouTube basta el ID o la URL.
+- **Perfil**: formación, publicaciones, docencia, asesoría legislativa, reconocimientos, ponencias y
+  membresías se muestran como pestañas (los enlaces `#publicaciones`, `#formacion`, etc. abren la pestaña).
+- **Trayectoria**: se muestran los 3 puestos más recientes; el resto queda tras "Ver trayectoria completa"
+  (constante `VISIBLE` en `src/components/Experience.tsx`).
 - **Sobre mí**: se muestran los primeros `aboutSummaryCount` párrafos; el resto aparece con "Leer más".
 
 ## Pendientes (`TODO:`)

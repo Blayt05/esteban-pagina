@@ -2,15 +2,23 @@ import type { CvContent } from "@/data/types";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { Section } from "./Section";
 
-export function Teaching({ data, t }: { data: CvContent["teaching"]; t: Dictionary }) {
+export function Teaching({
+  data,
+  t,
+  embedded,
+}: {
+  data: CvContent["teaching"];
+  t: Dictionary;
+  embedded?: boolean;
+}) {
   return (
-    <Section id="docencia" eyebrow={t.teaching.eyebrow} title={t.teaching.title}>
+    <Section embedded={embedded} id="docencia" eyebrow={t.teaching.eyebrow} title={t.teaching.title}>
       <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr]">
         <figure
           data-reveal
-          className="bg-grain self-start rounded-2xl bg-navy p-8 text-white shadow-lg dark:ring-1 dark:ring-gold/25"
+          className="self-start rounded-2xl border-l-4 border-gold bg-accent-soft p-8 text-ink shadow-sm dark:border-l-0 dark:bg-navy dark:text-white dark:ring-1 dark:ring-gold/25"
         >
-          <span aria-hidden className="font-serif text-6xl leading-none text-gold">“</span>
+          <span aria-hidden className="font-serif text-6xl leading-none text-accent dark:text-gold">“</span>
           <blockquote className="font-serif text-xl leading-relaxed">{data.highlight}</blockquote>
         </figure>
 

@@ -57,7 +57,7 @@ export function PublicationsExplorer({
   const chip = (active: boolean) =>
     `rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
       active
-        ? "border-navy bg-navy text-white dark:border-gold dark:bg-gold dark:text-navy"
+        ? "border-gold bg-accent-soft text-accent dark:border-gold dark:bg-gold dark:text-navy"
         : "border-line bg-surface text-ink/80 hover:border-accent hover:text-accent"
     }`;
 

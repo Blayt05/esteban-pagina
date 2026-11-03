@@ -3,9 +3,18 @@ import type { Dictionary } from "@/i18n/dictionaries";
 import { ScrollIcon } from "./Icons";
 import { Section } from "./Section";
 
-export function Legislative({ data, t }: { data: CvContent["legislative"]; t: Dictionary }) {
+export function Legislative({
+  data,
+  t,
+  embedded,
+}: {
+  data: CvContent["legislative"];
+  t: Dictionary;
+  embedded?: boolean;
+}) {
   return (
     <Section
+      embedded={embedded}
       id="asesoria-legislativa"
       eyebrow={t.legislative.eyebrow}
       title={t.legislative.title}

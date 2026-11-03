@@ -4,25 +4,24 @@ import type { SectionId } from "@/i18n/dictionaries";
 export const primaryNav: SectionId[] = [
   "sobre-mi",
   "trayectoria",
-  "formacion",
-  "publicaciones",
+  "galeria",
+  "perfil",
   "karate",
   "contacto",
 ];
 
-/** Todas las secciones, en orden de aparición (menú móvil y pie de página). */
-export const allNav: SectionId[] = [
-  "sobre-mi",
-  "cifras",
-  "organizaciones",
-  "trayectoria",
+/** Todas las secciones, en orden de aparición (menú móvil). */
+export const allNav: SectionId[] = primaryNav;
+
+/** Pestañas de la sección "Perfil" (cada una conserva su ancla, p. ej. #publicaciones). */
+export const credentialTabs = [
   "formacion",
-  "docencia",
   "publicaciones",
+  "docencia",
   "asesoria-legislativa",
   "reconocimientos",
   "ponencias",
   "membresias",
-  "karate",
-  "contacto",
-];
+] as const satisfies SectionId[];
+
+export type CredentialTab = (typeof credentialTabs)[number];

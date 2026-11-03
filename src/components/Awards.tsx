@@ -2,9 +2,17 @@ import type { Dictionary } from "@/i18n/dictionaries";
 import { AwardIcon } from "./Icons";
 import { Section } from "./Section";
 
-export function Awards({ items, t }: { items: string[]; t: Dictionary }) {
+export function Awards({
+  items,
+  t,
+  embedded,
+}: {
+  items: string[];
+  t: Dictionary;
+  embedded?: boolean;
+}) {
   return (
-    <Section id="reconocimientos" eyebrow={t.awards.eyebrow} title={t.awards.title} tone="muted">
+    <Section embedded={embedded} id="reconocimientos" eyebrow={t.awards.eyebrow} title={t.awards.title} tone="muted">
       <ul className="grid gap-4 md:grid-cols-2">
         {items.map((item) => (
           <li

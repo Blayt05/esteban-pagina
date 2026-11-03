@@ -3,11 +3,19 @@ import type { Dictionary } from "@/i18n/dictionaries";
 import { groupBy } from "@/lib/utils";
 import { Section } from "./Section";
 
-export function Talks({ items, t }: { items: Talk[]; t: Dictionary }) {
+export function Talks({
+  items,
+  t,
+  embedded,
+}: {
+  items: Talk[];
+  t: Dictionary;
+  embedded?: boolean;
+}) {
   const byCountry = groupBy(items, (talk) => talk.country);
 
   return (
-    <Section id="ponencias" eyebrow={t.talks.eyebrow} title={t.talks.title}>
+    <Section embedded={embedded} id="ponencias" eyebrow={t.talks.eyebrow} title={t.talks.title}>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {byCountry.map(([country, talks]) => (
           <section

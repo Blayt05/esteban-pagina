@@ -7,13 +7,15 @@ export function Education({
   items,
   certifications,
   t,
+  embedded,
 }: {
   items: EducationItem[];
   certifications: Certification[];
   t: Dictionary;
+  embedded?: boolean;
 }) {
   return (
-    <Section id="formacion" eyebrow={t.education.eyebrow} title={t.education.title} tone="muted">
+    <Section embedded={embedded} id="formacion" eyebrow={t.education.eyebrow} title={t.education.title} tone="muted">
       <ul className="grid gap-5 md:grid-cols-2">
         {items.map((ed) => (
           <li
